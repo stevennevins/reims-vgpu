@@ -55,7 +55,7 @@ pub use status::RvgStatus;
 /// [`device::rvg_bytes_free`]'s, goes back through that function, and the bytes the library gives
 /// Metal to free are `malloc`'s own.
 #[cfg(any(
-    all(target_os = "linux", target_arch = "x86_64"),
+    all(target_os = "linux", any(target_arch = "x86_64", target_arch = "aarch64")),
     all(target_os = "macos", target_arch = "aarch64")
 ))]
 #[global_allocator]
